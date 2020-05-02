@@ -3,9 +3,9 @@
 ### Subfolders have been created based on each chapter
 ****
 
-1. Introduction to Pointers
-2. Addresses and Arrays
-3. Indirection
+1. Introduction to Pointers [x]
+2. Addresses and Arrays [x]
+3. Indirection [x]
 4. Allocating Memory
 5. Pointer Arithmetic
 6. Pointer to Structs
