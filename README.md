@@ -7,7 +7,7 @@
 2. Addresses and Arrays [x]
 3. Indirection [x]
 4. Allocating Memory [x]
-5. Pointer Arithmetic
+5. Pointer Arithmetic [x]
 6. Pointer to Structs
 7. Lists and Data Structures
 8. Queues and Stacks
