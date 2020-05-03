@@ -6,7 +6,7 @@
 1. Introduction to Pointers [x]
 2. Addresses and Arrays [x]
 3. Indirection [x]
-4. Allocating Memory
+4. Allocating Memory [x]
 5. Pointer Arithmetic
 6. Pointer to Structs
 7. Lists and Data Structures
