@@ -39,38 +39,30 @@ LISTITEM *dequeue() {
 
 int main()
 {
-    
-    LISTITEM* temp;
+    LISTITEM *temp;
 
-    list.first = (LISTITEM*)&list;
-    list.last = (LISTITEM*)&list;
+	// first, make an empty queue
+	// ... which is a queue where the header points to itself and there are no items in it
+	list.first = (LISTITEM*)&list;
+	list.last = (LISTITEM*)&list;
 
-    for (int i = 0; i < 3; i++)
-    {
-        temp = (LISTITEM*)malloc(sizeof(LISTITEM));
-        temp->data = i;
-        temp->next = list.first;
-        list.first = temp;
-        temp->prev = (LISTITEM*)&list;
-        temp->next->prev = temp;
-    }
+	for (int i = 0; i < 3; i++) {	// as before, populate the queue
+		temp = (LISTITEM*)malloc(sizeof(LISTITEM)); // allocate some memory for the new queue item
+		temp->data = i;				// set the item's data to the loop count so that we can see where it is in the queue
+		enqueue(temp);				// and put it in the queue
+	}
 
-    temp = list.first;
-    while(temp != (LISTITEM*)&list)
-    {
-        printf("forward list item: current is %p; next is %p; prev is %p; data \
-        is %d\n", temp, temp->next, temp->prev, temp->data);
-        temp = temp->next;
-    }
+	printf("first item = %d\n", list.first->data);
+	printf("last item = %d\n\n", list.last->data);
 
-    LISTITEM* ord = dequeue();
+	// now let's dequeue from the end of the queue
+	do {							// keep going until the queue is empty
+		temp = dequeue();			// if the queue is empty we will get NULL returned
+		if (temp != NULL) {
+			printf("data is %d\n", temp->data);
+			free(temp);				// call 'free' to tidy up 
+		}
+	} while (temp != NULL);
 
-    if (ord != NULL)
-    {
-        printf("data is %d\n", ord->data);
-        free(ord);
-    }
-
-
-    return 0;
+	return 0;
 }
